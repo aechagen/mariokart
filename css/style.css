@@ -46,6 +46,11 @@ html, body {
     left: 50%;
     -webkit-animation: hop 0.3s 1.2s ease;
     animation: hop 0.3s 1.2s ease; }
+  .road .banana {
+    position: absolute;
+    width: 60px;
+    top: 170px;
+    left: 25%; }
 
 /* Things to Animate */
 .mario {
@@ -60,8 +65,8 @@ html, body {
   top: 85px;
   left: 0px;
   z-index: 2;
-  -webkit-animation: drive 5s both infinite linear;
-  animation: drive 5s both infinite linear; }
+  -webkit-animation: drive 5s both infinite linear, slip 0.3s 1.2s ease;
+  animation: drive 5s both infinite linear, slip 0.3s 1.2s ease; }
 
 .cloud {
   position: absolute; }
@@ -116,3 +121,17 @@ html, body {
     top: -80px; }
   100% {
     top: -35px; } }
+
+@-webkit-keyframes slip {
+  0% {
+    top: 85px; }
+  50% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes slip {
+  0% {
+    top: 85px; }
+  50% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }

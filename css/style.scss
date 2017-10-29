@@ -56,6 +56,13 @@ html, body {
     left: 50%;
     animation: hop 0.3s 1.2s ease;
   }
+
+  .banana {
+    position: absolute;
+    width: 60px;
+    top: 170px;
+    left: 25%;
+  }
 }
 
 
@@ -75,7 +82,8 @@ html, body {
   top: 85px;
   left: 0px;
   z-index: 2;
-  animation: drive 5s both infinite linear;
+  animation: drive 5s both infinite linear,
+             slip 0.3s 1.2s ease;
 }
 
 .cloud {
@@ -91,8 +99,9 @@ html, body {
     top: 0;
     animation: wind 50s linear infinite reverse;
   }
-
 }
+
+
 
 /* Keyframes */
 
@@ -110,4 +119,9 @@ html, body {
   0% { top: -35px } // Starting position (matches .mario's "top")
   50% { top: -80px } // Hop at midway point (50%)
   100% { top: -35px } // Back to the starting position after the hop
+}
+
+@keyframes slip {
+  0% { top: 85px }
+  50% { transform: rotate(360deg) }
 }
