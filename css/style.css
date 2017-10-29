@@ -1,0 +1,30 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0; }
+
+.grass, .sky, .road {
+  position: relative; }
+
+.sky {
+  height: 40%;
+  background: skyblue; }
+
+.grass {
+  height: 30%;
+  background: seagreen; }
+
+.road {
+  height: 30%;
+  background: dimgray;
+  border-top: 10px solid gray;
+  border-bottom: 10px solid gray;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  .road .lines {
+    border: 4px dashed #fff;
+    height: 0px;
+    width: 100%;
+    position: absolute;
+    bottom: 45%; }

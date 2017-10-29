@@ -1,0 +1,36 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+.grass, .sky, .road {
+  position: relative;
+}
+
+.sky {
+  height: 40%;
+  background: skyblue;
+}
+
+.grass {
+  height: 30%;
+  background: seagreen;
+}
+
+.road {
+  height: 30%;
+  background: dimgray;
+  border-top: 10px solid gray; // Sets a border for the top
+  border-bottom: 10px solid gray; // Sets a border for the bottom
+  box-sizing: border-box; // Makes it fit.
+
+  .lines {
+    border: 4px dashed #fff;
+    height: 0px;
+    width: 100%;
+    position: absolute;
+    bottom: 45%;
+  }
+}
