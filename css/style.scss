@@ -17,6 +17,22 @@ html, body {
 .grass {
   height: 20%;
   background: seagreen;
+  .flower {
+    position: absolute;
+    height: 40px;
+    &:nth-child(1) {
+      height: 40px;
+      left: 50%;
+    }
+    &:nth-child(2) {
+      top: 18%;
+      left: 34%;
+    }
+    &:nth-child(3) {
+      top: 25%;
+      left: 69%; // Teehee
+    }
+  }
 }
 
 .road {
@@ -33,6 +49,13 @@ html, body {
     position: absolute; // To allow repositioning
     bottom: 50%;
   }
+
+  .box {
+    position: absolute;
+    height: 80px;
+    left: 50%;
+    animation: hop 0.3s 1.2s ease;
+  }
 }
 
 
@@ -43,7 +66,8 @@ html, body {
   position: absolute;
   top: -35px;
   left: 0px;
-  animation: drive 3s both infinite linear; // animation: (keyframe) / (duration) / (iteration) / (speed)
+  animation: drive 3s both infinite linear,
+             hop 0.3s 1.2s ease; // animation: (keyframe) / (duration) / (iteration) / (speed)
 }
 
 .luigi {
@@ -54,9 +78,36 @@ html, body {
   animation: drive 5s both infinite linear;
 }
 
+.cloud {
+  position: absolute;
+  &:nth-child(1) { // Selects first child
+    width: 200px;
+    top: 100px;
+    opacity: 0.5;
+    animation: wind 40s linear infinite reverse;
+  }
+  &:nth-child(2) { // Selects second child
+    width: 300px;
+    top: 0;
+    animation: wind 50s linear infinite reverse;
+  }
+
+}
+
 /* Keyframes */
 
 @keyframes drive {
-  from{ left: -150px }
-  to{ left: 1500px }
+  from { left: -150px } // "From" the left side of the screen (off screen)
+  to { left: 1500px } // "To" 1500px from the left. (also off screen)
+}
+
+@keyframes wind {
+  from { left: -150px } 
+  to { left: 100% }
+}
+
+@keyframes hop {
+  0% { top: -35px } // Starting position (matches .mario's "top")
+  50% { top: -80px } // Hop at midway point (50%)
+  100% { top: -35px } // Back to the starting position after the hop
 }
