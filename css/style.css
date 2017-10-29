@@ -12,11 +12,11 @@ html, body {
   background: skyblue; }
 
 .grass {
-  height: 30%;
+  height: 20%;
   background: seagreen; }
 
 .road {
-  height: 30%;
+  height: 40%;
   background: dimgray;
   border-top: 10px solid gray;
   border-bottom: 10px solid gray;
@@ -27,4 +27,32 @@ html, body {
     height: 0px;
     width: 100%;
     position: absolute;
-    bottom: 45%; }
+    bottom: 50%; }
+
+/* Things to Animate */
+.mario {
+  position: absolute;
+  top: -35px;
+  left: 0px;
+  -webkit-animation: drive 3s both infinite linear;
+  animation: drive 3s both infinite linear; }
+
+.luigi {
+  position: absolute;
+  top: 85px;
+  left: 0px;
+  z-index: 2;
+  -webkit-animation: drive 5s both infinite linear;
+  animation: drive 5s both infinite linear; }
+
+/* Keyframes */
+@-webkit-keyframes drive {
+  from {
+    left: -150px; }
+  to {
+    left: 1500px; } }
+@keyframes drive {
+  from {
+    left: -150px; }
+  to {
+    left: 1500px; } }

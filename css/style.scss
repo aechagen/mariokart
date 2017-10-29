@@ -15,12 +15,12 @@ html, body {
 }
 
 .grass {
-  height: 30%;
+  height: 20%;
   background: seagreen;
 }
 
 .road {
-  height: 30%;
+  height: 40%;
   background: dimgray;
   border-top: 10px solid gray; // Sets a border for the top
   border-bottom: 10px solid gray; // Sets a border for the bottom
@@ -30,7 +30,33 @@ html, body {
     border: 4px dashed #fff;
     height: 0px;
     width: 100%;
-    position: absolute;
-    bottom: 45%;
+    position: absolute; // To allow repositioning
+    bottom: 50%;
   }
+}
+
+
+
+/* Things to Animate */
+
+.mario {
+  position: absolute;
+  top: -35px;
+  left: 0px;
+  animation: drive 3s both infinite linear; // animation: (keyframe) / (duration) / (iteration) / (speed)
+}
+
+.luigi {
+  position: absolute;
+  top: 85px;
+  left: 0px;
+  z-index: 2;
+  animation: drive 5s both infinite linear;
+}
+
+/* Keyframes */
+
+@keyframes drive {
+  from{ left: -150px }
+  to{ left: 1500px }
 }
